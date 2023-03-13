@@ -1,0 +1,6 @@
+☑ 1. 使用flask呈現
+☑ 2.下拉選單選模型
+☐ 選完後能夠預測api值
+☐ 部屬到lab506 
+☐ 前端用Reacter
+☐ 部屬虛擬機 FLASK + Reacter 

@@ -8,7 +8,7 @@ WORKDIR /myapp
 COPY test.py .
 
 # 安裝其他必要的Python套件
-RUN pip install pandas matplotlib scikit-learn
+RUN pip install pandas matplotlib scikit-learn schedule
 
 # 指定容器啟動時運行的命令
 CMD [ "python", "test.py" ]

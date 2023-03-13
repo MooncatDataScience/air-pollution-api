@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Air Quality Prediction</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+    <h1>Air Quality Prediction</h1>
+    <form method="POST">
+        <label for="model">Select a Model:</label>
+        <select name="model" id="model">
+            <option value="Linear Regression">Linear Regression</option>
+            <option value="Decision Tree">Decision Tree</option>
+            <option value="Random Forest">Random Forest</option>
+            <option value="Support Vector Machine">Support Vector Machine</option>
+            <option value="Neural Network">Neural Network</option>
+            <option value="XGBoost">XGBoost</option>
+        </select>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

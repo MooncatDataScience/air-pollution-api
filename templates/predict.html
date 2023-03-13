@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Air Quality Prediction - Results</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Air Quality Prediction Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th>Model</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>R2</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result['Site'] }}</td>
+                <td>{{ result['Model'] }}</td>
+                <td>{{ result['MAE'] }}</td>
+                <td>{{ result['MSE'] }}</td>
+                <td>{{ result['R2'] }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+    
+</body>
+</html>

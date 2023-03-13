@@ -12,17 +12,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-def plot_results(y_test, y_pred):
-    fig, ax = plt.subplots()
-    ax.plot(y_test.index, y_test, label='Actual')
-    ax.plot(y_test.index, y_pred, label='Predicted')
-    ax.legend()
-    ax.set_xlabel('Time')
-    ax.set_ylabel('Air Quality Index')
-    ax.set_title('Predicted vs Actual Air Quality Index')
-    ax.grid(True)
-    return fig
-
 def predict_model(X_train, y_train, X_test, y_test, model_name):
     if model_name == "Linear Regression":
         model = LinearRegression()
@@ -44,11 +33,7 @@ def predict_model(X_train, y_train, X_test, y_test, model_name):
     mae = mean_absolute_error(y_test, y_pred)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
-    y_pred = [ '%.2f' % elem for elem in y_pred ]
-    fig = plot_results(y_test, y_pred)
-
-    return {'Model': model_name, 'MAE': round(mae,2), 'MSE': round(mse,2)
-            ,'R2': round(r2,2), 'fig': fig}
+    return {'Model': model_name, 'MAE': mae, 'MSE': mse, 'R2': r2}
 
 def feature_selection(table):
     ds = table[['pm2.5_avg', 'pm10_avg']]
